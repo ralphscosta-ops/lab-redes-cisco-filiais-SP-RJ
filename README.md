@@ -541,6 +541,7 @@ line vty 5 15
 !
 end
 
+## 💻 Configurações dos Equipamentos (CLI)
 
 <details>
 <summary>🖱️ <b>Clique aqui para ver a configuração do Roteador Principal RJ (show running-config)</b></summary>
