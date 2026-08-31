@@ -1,25 +1,20 @@
-# 🌐 Simulação de Rede Corporativa Multi-Filiais (SP e RJ)
+# 🌐 Infraestrutura de Rede Corporativa: Matriz (SP) e Filial (RJ)
 
 **Autor:** Ralph Costa da Silva
 
 ## 📋 Sobre o Projeto
-Este laboratório prático simula a infraestrutura de rede de uma corporação com matriz em São Paulo e uma filial no Rio de Janeiro. O objetivo principal foi aplicar conceitos de roteamento, segmentação de tráfego corporativo e políticas de segurança na camada de rede.
+Este laboratório simula a infraestrutura de rede de uma corporação com matriz em São Paulo e filial no Rio de Janeiro. O objetivo é estabelecer a conectividade segura, escalável e de alta disponibilidade entre duas localidades, aplicando conceitos avançados de roteamento dinâmico, segmentação e telefonia IP.
 
 ## 🛠️ Tecnologias e Protocolos Utilizados
 * **Simulador:** Cisco Packet Tracer
-* **Equipamentos:** Roteadores e Switches Cisco (IOS)
-* **Comunicação:** Roteamento Estático entre localidades
-* **Segmentação:** Criação e configuração de 8 VLANs distintas para o isolamento de departamentos
-* **Segurança:** Implementação de Access Control Lists (ACLs) para restrição e filtro de tráfego interno
+* **Equipamentos:** Roteadores (Cisco 2811) e Switches Cisco (IOS)
+* **Roteamento Dinâmico:** OSPF (redes internas) e BGP (comunicação entre filiais)
+* **Segmentação e Endereçamento:** Múltiplas VLANs, DHCP (IPv4) e SLAAC/DHCPv6 (IPv6)
+* **Segurança Perimetral:** NAT, ACLs (Access Control Lists) estendidas para filtro de tráfego e acesso remoto seguro (SSH)
+* **Serviços:** Telefonia IP (Cisco CallManager Express - VoIP)
 
-## 🏗️ Topologia da Rede
-*(Observação: Substituir esta linha por um print nítido da topologia no Packet Tracer)*
+## 🗺️ Topologia da Rede
+*(Substituiremos esta linha pela imagem da topologia no próximo passo)*
 
-## ⚙️ Destaques da Configuração (CLI)
-Neste projeto, desenvolvi na prática a configuração dos equipamentos via linha de comando (CLI), resolvendo os seguintes desafios:
-1. **Configuração de VLANs:** Separação lógica de 8 setores para reduzir domínios de broadcast, organizar o endereçamento IP e aumentar a segurança departamental.
-2. **Roteamento de Filiais:** Estabelecimento e validação da comunicação de dados fim a fim entre as unidades de São Paulo e Rio de Janeiro.
-3. **Filtros de Tráfego:** Criação de regras de ACL para permitir ou bloquear a comunicação de pacotes específicos entre as VLANs.
-
-## 🚀 Como testar este laboratório
-Os arquivos de configuração e o arquivo `.pkt` deste laboratório estão disponíveis neste repositório.
+## 🚀 Destaques da Configuração (CLI)
+Os arquivos `.txt` neste repositório contêm as configurações integrais (*show running-config*) dos roteadores principais. O foco da implementação foi garantir o *hardening* dos equipamentos, a comunicação inter-VLANs e o bloqueio estrito de redes sensíveis através de firewalls baseados em ACLs.
