@@ -913,3 +913,203 @@ end
 ```
 
 </details>
+
+<details>
+<summary>🖱️ <b>Clique aqui para ver a configuração do Roteador ISP</b></summary>
+
+```text
+Router#show running-config
+Building configuration...
+
+Current configuration : 851 bytes
+!
+version 12.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet0/1
+ ip address 200.0.0.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Serial0/0/0
+ ip address 200.2.0.2 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/1/0
+ ip address 200.1.0.2 255.255.255.252
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router bgp 2000
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 200.1.0.1 remote-as 2001
+ neighbor 200.2.0.1 remote-as 2002
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+Router# configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname ISP
+ISP(config)#^Z
+ISP#
+%SYS-5-CONFIG_I: Configured from console by console
+
+ISP#show running-config
+Building configuration...
+
+Current configuration : 848 bytes
+!
+version 12.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname ISP
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet0/1
+ ip address 200.0.0.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Serial0/0/0
+ ip address 200.2.0.2 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/1/0
+ ip address 200.1.0.2 255.255.255.252
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router bgp 2000
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 200.1.0.1 remote-as 2001
+ neighbor 200.2.0.1 remote-as 2002
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+```
+
+</details>
